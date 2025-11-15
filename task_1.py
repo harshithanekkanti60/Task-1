@@ -60,12 +60,12 @@ def get_number(prompt):
         try:
             return float(val)
         except ValueError:
-            print(Fore.RED + "❌ Please enter a valid numeric value.")
+            print(Fore.RED + " Please enter a valid numeric value.")
 
 
 def main():
     calc = Calculator()
-    print("\n🧮 Welcome to CLI Calculator!\n")
+    print("\n Welcome to CLI Calculator!\n")
     print("Available Operations:")
     print("1️⃣  Addition (+)\n2️⃣  Subtraction (-)\n3️⃣  Multiplication (*)\n4️⃣  Division (/)\n5️⃣  Modulus (%)\n6️⃣  Power (**)\n")
     print("Type 'exit' anytime to quit.\n")
@@ -73,11 +73,11 @@ def main():
     while True:
         choice = input("Enter operation symbol (+, -, *, /, %, **) or 'exit': ").strip()
         if choice.lower() == 'exit':
-            print("✅ Thank you for using the calculator. Goodbye! 👋")
+            print(" Thank you for using the calculator. Goodbye! ")
             break
 
         if choice not in ['+', '-', '*', '/', '%', '**']:
-            print("❌ Invalid operation! Please choose from +, -, *, /, %, **.\n")
+            print(" Invalid operation! Please choose from +, -, *, /, %, **.\n")
             continue
 
         # Get first number safely
@@ -105,13 +105,13 @@ def main():
 
             # Clean up output for neat display
             formatted = calc.clean_result(result)
-            print(f"✅ Result: {formatted}\n")
+            print(f" Result: {formatted}\n")
 
             # Log successful calculation
             logging.info(f"Operation: {num1} {choice} {num2} = {formatted}")
 
         except ZeroDivisionError as e:
-            print( + f"⚠️ {e}\n")
+            print( + f" {e}\n")
             logging.warning(f"Attempted {e}")
         except Exception as e:
             print(f"Unexpected error: {e}\n")
